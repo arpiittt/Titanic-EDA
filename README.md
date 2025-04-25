@@ -1,55 +1,56 @@
-# 🚢 Titanic Dataset - Exploratory Data Analysis (EDA)
+# 🚢 Titanic Dataset - Exploratory Data Analysis 
 
-This project is part of an internship task focused on performing **EDA** on the raw Titanic dataset to uncover patterns, correlations, and insights.
+This project demonstrates **Exploratory Data Analysis (EDA)** on the **cleaned Titanic dataset** to uncover hidden trends, correlations, and patterns useful for further modeling.
 
 ---
 
 ## 📁 Dataset
-The dataset used is the **raw Titanic dataset** (`Titanic-Dataset.csv`), downloaded from Kaggle:  
+The dataset used is a **cleaned version** of the Titanic dataset, where missing values were handled and features were preprocessed.
+
+Original dataset from Kaggle:  
 🔗 [Titanic Dataset on Kaggle](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
 
 ---
 
-## 🛠 Tools & Libraries
-- **Python**
-- **Pandas** for data manipulation
-- **Matplotlib** & **Seaborn** for visualization
+## 🛠 Libraries Used
+- **Python 3**
+- **Pandas** – data manipulation
+- **Matplotlib & Seaborn** – data visualization
 
 ---
 
-## 🔍 EDA Steps Performed
-
-1. Loaded the dataset and checked:
-   - Structure of data (`info()`)
+## 📊 EDA Performed
+1. **Loaded dataset** and checked:
+   - Data structure (`info()`)
    - Summary statistics (`describe()`)
    - Missing values (`isnull().sum()`)
 
-2. **Visualizations:**
-   - Histograms of numeric features → `raw_histograms.png`
-   - Boxplot of Age by Class → `boxplot_age_pclass.png`
-   - Correlation matrix heatmap → `correlation_matrix.png`
-   - Pairplot of key features → `pairplot.png`
-
-3. **Inferences Made:**
-   - Most passengers are aged 20–40
-   - Fare is right-skewed (a few people paid a lot)
-   - 1st class passengers were older and survived more
-   - Strong correlation between `Pclass`, `Fare`, and `Survived`
-   - Categorical features like `Sex` will be useful in future analysis
+2. **Visualized:**
+   - Histograms for feature distributions → `raw_histograms.png`
+   - Boxplot (Age vs Class) → `boxplot_age_pclass.png`
+   - Correlation matrix → `correlation_matrix.png`
+   - Pairplot (with `Survived` hue) → `pairplot.png`
 
 ---
 
 ## 🧠 Key Insights
-- **Class and Fare** significantly impact survival
-- **Age** is less linearly related but still useful visually
-- **Cabin** has too many missing values
-- **SibSp** and **Parch** suggest most people were traveling alone
+
+- **Age**: Most passengers fall in the 20–40 age range.
+- **Fare**: Distribution is right-skewed; few passengers paid very high prices.
+- **Class vs Age**: 1st class passengers are older on average than 2nd or 3rd class.
+- **Survival vs Fare/Pclass**: Higher fare and lower Pclass (1st class) are associated with higher survival chances.
+- **Family Features**: Most people traveled alone (SibSp and Parch = 0).
+- **Feature Correlation**:
+  - Pclass and Fare are strongly negatively correlated.
+  - Fare and Survived are moderately positively correlated.
+  - Age and Survived show a very weak relationship.
 
 ---
 
-## ▶️ How to Run
-Make sure your file is named `Titanic-Dataset.csv` and is in the same folder as the Python script.  
-Then run:
+## 📂 How to Run
+
+1. Make sure the cleaned dataset (`Titanic-Dataset.csv`) is in the same directory.
+2. Run the script:
 
 ```bash
 python eda_titanic.py

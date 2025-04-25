@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv("Titanic-Dataset.csv")
+df = pd.read_csv("cleaned_titanic.csv")
 
 print("Dataset Info: ")
 print(df.info())
@@ -44,25 +44,25 @@ plt.show()
 
 print("\n🧠 Inferences Based on EDA:\n")
 
-# From histograms
+# General distribution insights
 print("1. Most passengers are young (20–40 years). Fare is heavily right-skewed — few passengers paid high fares.")
 
-# From boxplot
+# Boxplot insight
 print("2. Passengers in 1st class are older on average than those in 2nd or 3rd class. More outliers exist in 3rd class.")
 
-# From correlation matrix
-print("3. 'Pclass' has a moderate negative correlation with 'Survived' (-0.34), meaning survival rate drops with lower class.")
-print("4. 'Fare' has a positive correlation with 'Survived' (0.26), suggesting that passengers who paid more had better chances of survival.")
+# Correlation matrix insights
+print("3. 'Pclass' has a moderate negative correlation with 'Survived' (-0.27), meaning survival rate drops with lower class.")
+print("4. 'Fare' has a positive correlation with 'Survived' (0.25), suggesting that passengers who paid more had better chances of survival.")
 
-# From pairplot
+# Pairplot observations
 print("5. Survival is clearly higher in Class 1 with higher fares. Very few survived in Class 3 with low fare.")
 print("6. No strong linear correlation between 'Age' and 'Survived', but visually young children show a slight survival edge.")
 
-# From missing values
-print("7. 'Age' and 'Cabin' have many missing values. Cabin may need to be dropped or transformed (e.g., use Deck letter).")
+# Missing data handling in cleaned dataset
+print("7. Missing values in 'Age', 'Cabin', and 'Embarked' were cleaned before this analysis. 'Cabin' is still too sparse to use directly but may be transformed into deck-level features.")
 
-# From SibSp/Parch
+# Family size insights
 print("8. Most passengers were alone (SibSp=0, Parch=0), with small family groups being more common than large ones.")
 
-# Final insight
+# Categorical feature importance
 print("9. Categorical features like 'Sex' and 'Embarked' will also play a major role in modeling, especially 'Sex'.")
